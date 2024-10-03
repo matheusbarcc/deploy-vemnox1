@@ -87,7 +87,11 @@ public class CartaService {
 
 	public List<Carta> sortearSeisCartas() {
 		List<Carta> cartasSorteadas = null;
-		cartasSorteadas = this.cartaRepository.sortearSeisCartasPostgres();
+		if(dataSourceVigente == null || dataSourceVigente.equals("mysql")) {
+			cartasSorteadas = this.cartaRepository.sortearSeisCartasMySQL();
+		}else {
+			cartasSorteadas = this.cartaRepository.sortearSeisCartasPostgres();
+		}
 		return cartasSorteadas;
 	}
 
