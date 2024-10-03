@@ -9,7 +9,7 @@ COPY pom.xml .
 COPY src ./src
 
 # RUN mvn clean install -DSkipTests=true
-RUN mvn clean install -DskipTests=true
+RUN mvn clean package -DskipTests
 
 #
 # Package stage
