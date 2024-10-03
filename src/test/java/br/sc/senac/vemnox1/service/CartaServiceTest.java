@@ -194,7 +194,7 @@ public class CartaServiceTest {
     @DisplayName("Deve retornar uma lista de cartas sorteadas")
     public void testSortearSeisCartas() {
         List<Carta> seisCartas = cartas.subList(0, 6);
-		when(cartaRepository.sortearSeisCartasMySQL()).thenReturn(seisCartas);
+		when(cartaRepository.sortearSeisCartasPostgres()).thenReturn(seisCartas);
 
         List<Carta> resultado = cartaService.sortearSeisCartas();
 
